@@ -1,0 +1,50 @@
+{
+	"groups": [
+		{
+			"keys": "bg_jpg,egret_icon_png,description_json,npc2_png,npc1_png",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/bg.jpg",
+			"type": "image",
+			"name": "bg_jpg"
+		},
+		{
+			"url": "assets/egret_icon.png",
+			"type": "image",
+			"name": "egret_icon_png"
+		},
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "assets/NPC.jpg",
+			"type": "image",
+			"name": "NPC_jpg"
+		},
+		{
+			"url": "assets/TMDMW.jpg",
+			"type": "image",
+			"name": "TMDMW_jpg"
+		},
+		{
+			"url": "assets/BOBI.jpg",
+			"type": "image",
+			"name": "BOBI_jpg"
+		},
+		{
+			"url": "assets/npc2.png",
+			"type": "image",
+			"name": "npc2_png"
+		},
+		{
+			"url": "assets/npc1.png",
+			"type": "image",
+			"name": "npc1_png"
+		}
+	]
+}
