@@ -1,3 +1,32 @@
+//////////////////////////////////////////////////////////////////////////////////////
+//
+//  Copyright (c) 2014-2015, Egret Technology Inc.
+//  All rights reserved.
+//  Redistribution and use in source and binary forms, with or without
+//  modification, are permitted provided that the following conditions are met:
+//
+//     * Redistributions of source code must retain the above copyright
+//       notice, this list of conditions and the following disclaimer.
+//     * Redistributions in binary form must reproduce the above copyright
+//       notice, this list of conditions and the following disclaimer in the
+//       documentation and/or other materials provided with the distribution.
+//     * Neither the name of the Egret nor the
+//       names of its contributors may be used to endorse or promote products
+//       derived from this software without specific prior written permission.
+//
+//  THIS SOFTWARE IS PROVIDED BY EGRET AND CONTRIBUTORS "AS IS" AND ANY EXPRESS
+//  OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+//  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+//  IN NO EVENT SHALL EGRET AND CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+//  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+//  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;LOSS OF USE, DATA,
+//  OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+//  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+//  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+//
+//////////////////////////////////////////////////////////////////////////////////////
+
 class Main extends egret.DisplayObjectContainer {
 
     /**
@@ -5,13 +34,6 @@ class Main extends egret.DisplayObjectContainer {
      * Process interface loading
      */
     private loadingView:LoadingUI;
-
-    public static click : boolean;
-
-    public static getInstance(){
-
-        return this;
-    }
 
     public constructor() {
         super();
@@ -94,181 +116,82 @@ class Main extends egret.DisplayObjectContainer {
      * 创建游戏场景
      * Create a game scene
      */
-
-
-
-    //对话任务面板的ui
-    public static content1 = new egret.TextField();
-    public static content2 = new egret.TextField();
-    public static content3 = new egret.TextField();
-    public static content4 = new egret.TextField();
-    public static button = new egret.TextField();
-
-    public static taskPanelContent1 = new egret.TextField();
-    public static taskPanelContent2 = new egret.TextField();
-    public static taskPanelContent3 = new egret.TextField();
-    public static taskPanelContent4 = new egret.TextField();
-
-    //emoji
-    public static n0Emoji = new egret.TextField();
-    public static n1Emoji = new egret.TextField();
-
-    public showPanel(task : Task, tag : String){
-        if(tag == "taskpanel not accept" || tag == "taskpanel submit"){
-            Main.taskPanelContent1.text = "任务进行状态：无";
-            Main.taskPanelContent1.x = 200;
-            Main.taskPanelContent1.y = 630;
-            Main.taskPanelContent1.size = 40;
-            Main.taskPanelContent2.text = "";
-            Main.taskPanelContent3.text = "";
-            Main.taskPanelContent4.text = "";
-        }else if(tag == "taskpanel accept"){
-            Main.taskPanelContent1.text = "任务名称: " + task.getName();
-            Main.taskPanelContent1.x = 200;
-            Main.taskPanelContent1.y = 380;
-            Main.taskPanelContent1.size = 30;
-            Main.taskPanelContent2.text = "发布任务NPC: " + task.getFromNpcId();
-            Main.taskPanelContent2.x = 200;
-            Main.taskPanelContent2.y = 430;
-            Main.taskPanelContent2.size = 30;
-            Main.taskPanelContent3.text = "完成任务NPC: " + task.getToNpcId();
-            Main.taskPanelContent3.x = 200;
-            Main.taskPanelContent3.y = 480;
-            Main.taskPanelContent3.size = 30;
-            Main.taskPanelContent4.text = "任务状态： " + task.getStatus();           
-            Main.taskPanelContent4.x = 200;
-            Main.taskPanelContent4.y = 530;
-            Main.taskPanelContent4.size = 30;
-        }
-        if(tag == "accept"){
-            Main.content1.text = "任务名称: " + task.getName();
-            Main.content1.x = 200;
-            Main.content1.y = 380;
-            Main.content2.text = "发布任务NPC: " + task.getFromNpcId();
-            Main.content2.x = 200;
-            Main.content2.y = 430;
-            Main.content3.text = "完成任务NPC: " + task.getToNpcId();
-            Main.content3.x = 200;
-            Main.content3.y = 480;
-            Main.content4.text = "任务状态： " + task.getStatus();
-            Main.content4.x = 200;
-            Main.content4.y = 530;
-            Main.button.x = 300;
-            Main.button.y = 580;
-            Main.button.text = "接受任务";
-            Main.button.textColor = 0xFFFF00;
-            Main.button.touchEnabled = true;
-            Main.button.addEventListener(egret.TouchEvent.TOUCH_TAP, function(){
-                TaskService.getInstance().accept(task.getId());
-                Main.button.text = "";
-                Main.content1.text = "";
-                Main.content2.text = "";
-                Main.content3.text = "";
-                Main.content4.text = "";
-            },this);
-        }else if(tag == "finish"){
-            Main.content1.text = "任务名称: " + task.getName();
-            Main.content1.x = 200;
-            Main.content1.y = 600;
-            Main.content2.text = "发布任务NPC: " + task.getFromNpcId();
-            Main.content2.x = 200;
-            Main.content2.y = 650;
-            Main.content3.text = "完成任务NPC: " + task.getToNpcId();
-            Main.content3.x = 200;
-            Main.content3.y = 700;
-            Main.content4.text = "任务状态： " + task.getStatus();
-            Main.content4.x = 200;
-            Main.content4.y = 750;
-            Main.button.x = 300;
-            Main.button.y = 800;
-            Main.button.text = "完成任务";
-            Main.button.touchEnabled = true;
-            Main.button.addEventListener(egret.TouchEvent.TOUCH_TAP, function(){
-                TaskService.getInstance().finish(task.getId());
-                Main.button.text = "";
-                Main.content1.text = "";
-                Main.content2.text = "";
-                Main.content3.text = "";
-                Main.content4.text = "";
-            },this);
-        }
-    }
-
-    public showEmoji(emoji : String){
-        if(emoji == "yellow !"){
-            Main.n0Emoji.text = "！";
-            Main.n0Emoji.x = 60;
-            Main.n0Emoji.y = 150;
-            Main.n0Emoji.size = 200;
-            Main.n0Emoji.textColor = 0xFFFF00;
-        }else if(emoji == "yellow ?"){
-            Main.n0Emoji.text = "";
-            Main.n1Emoji.text = "？";
-            Main.n1Emoji.x = 60;
-            Main.n1Emoji.y = 880;
-            Main.n1Emoji.size = 200;
-            Main.n1Emoji.textColor = 0xFFFF00;
-        }else if(emoji == ""){
-            Main.n0Emoji.text = "";
-            Main.n1Emoji.text = "";
-        }
-    }
-
     private createGameScene():void {
-        this.touchEnabled = true;
-        var NPC0 = new NPC("npc_0");
-        var NPC1 = new NPC("npc_1");
-        var taskPanel = new TaskPanel("dialogpanel");
-        var taskAllTimePanel = new TaskPanel("taskpanel");
-        var taskService = TaskService.getInstance();
-        var task = new Task("0", "找到他！", TaskStatus.ACCEPTABLE, "npc_0", "npc_1");
-        var N0 = this.createBitmapByName("npc1_png");
-        N0.y = 50;
-        N0.x = 200;
-        N0.width = 360;
-        N0.height = 300;
-        N0.touchEnabled = true;
-        N0.addEventListener(egret.TouchEvent.TOUCH_TAP, function(){
-            Main.click = true;
-            TaskService.getInstance().notify(task);
-        }, this);
-        this.addChild(N0);
-        var N1 = this.createBitmapByName("npc2_png");
-        N1.x = 200;
-        N1.y = 838;
-        N1.width = 360;
-        N1.height = 300;
-        N1.touchEnabled = true;
-        N1.addEventListener(egret.TouchEvent.TOUCH_TAP, function(){
-            Main.click = true;
-            TaskService.getInstance().notify(task);
-        }, this);
-        this.addChild(N1);
-        this.addChild(Main.n0Emoji);
-        this.addChild(Main.n1Emoji);
-        this.addChild(Main.content1);
-        this.addChild(Main.content2);
-        this.addChild(Main.content3);
-        this.addChild(Main.content4);
-        this.addChild(Main.button);
-        this.addChild(Main.taskPanelContent1);
-        this.addChild(Main.taskPanelContent2);
-        this.addChild(Main.taskPanelContent3);
-        this.addChild(Main.taskPanelContent4);
-        taskService.addObserver(NPC0);
-        taskService.addObserver(NPC1);
-        taskService.addObserver(taskPanel);
-        taskService.addObserver(taskAllTimePanel);
-        taskService.addTask(task);
-        taskService.getTaskByCustomRule(function(taskList : Task[]) : Task{
-            for(var i = 0; i < taskList.length; i++){
-                if(taskList[i].getStatus() == TaskStatus.ACCEPTABLE){
-                    taskService.notify(taskList[i]);
-                    return taskList[i];
-                }
-            }
-        });
+        var sky:egret.Bitmap = this.createBitmapByName("bgImage");
+       // this.addChild(sky);
+        var stageW:number = this.stage.stageWidth;
+        var stageH:number = this.stage.stageHeight;
+        sky.width = stageW;
+        sky.height = stageH;
+
+        this.Addtask();
+
     }
+
+    Addtask() {
+        var taskser =TaskService.getInstance();
+        var dp=new DialoguePanel();
+        var npc_0 =new NPC(0,dp);
+        var npc_1 =new NPC(1,dp);
+        var taskPanel=new TaskPanel();
+        var TaskButton:egret.Bitmap=this.createBitmapByName("人物摁扭_png");
+        TaskButton.x=this.stage.stageWidth- TaskButton.width;
+        TaskButton.y=0;
+        var task0 =new Task(Tasks[0].id,Tasks[0].name,Tasks[0].desc,TaskStatus.ACCEPTABLE,Tasks[0].fromNPCid,Tasks[0].toNPCid,Tasks[0].condition,Tasks[0].nexttaskid);
+        var task1 =new Task(Tasks[1].id,Tasks[1].name,Tasks[1].desc,TaskStatus.UNACCEPTABLE,Tasks[1].fromNPCid,Tasks[1].toNPCid,Tasks[1].condition,Tasks[1].nexttaskid);
+        this.addChild(npc_0);
+        this.addChild(npc_1);
+        this.addChild(TaskButton);
+    
+        npc_0.x=26;
+        npc_0.y=133;
+        npc_1.x=326;
+        npc_1.y=333;
+        
+        taskser.observerList.push(taskPanel);
+        taskser.observerList.push(npc_0);
+        taskser.observerList.push(npc_1);
+        taskser.taskList.push(task0);
+        taskser.taskList.push(task1);
+
+        TaskButton.touchEnabled=true;
+        npc_0.touchEnabled=true;
+        npc_1.touchEnabled=true;
+        npc_0.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>{this.NPCisClick(npc_0,dp)},this);
+        TaskButton.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>(this.showTaskPanel(taskPanel)),this);
+        npc_1.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>{this.NPCisClick(npc_1,dp) },this);
+        
+        taskser.notify(taskser.taskList[0]);
+
+        var MB =new MonsterKillButton();
+        MB.photo=this.createBitmapByName("egretIcon");
+        var SS=new SenService();
+        var m:KillMonsterTaskCondition=task1.getMyCondition() ;
+        SS.observerList.push(m);
+        MB.mySS=(SS);
+
+        this.addChild(MB);
+        MB.addChild(MB.photo);
+        MB.x=0;
+        MB.y=this.stage.height-MB.photo.height;
+        MB.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>{MB.onButtonClick(task1)},this);
+        MB.touchEnabled=true;
+
+        
+     }
+     showTaskPanel(taskPanel:TaskPanel){
+         this.addChild(taskPanel);
+         taskPanel.onShow();
+     }
+
+        NPCisClick (npc:NPC,dp:DialoguePanel){
+            npc.onNPCClick();
+            this.addChild(dp);
+     
+         }
+
+        
+    
 
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
@@ -281,48 +204,6 @@ class Main extends egret.DisplayObjectContainer {
         return result;
     }
 
-    /**
-     * 描述文件加载成功，开始播放动画
-     * Description file loading is successful, start to play the animation
-     */
-    private startAnimation(result:Array<any>):void {
-        var self:any = this;
-        var parser = new egret.HtmlTextParser();
-        var textflowArr:Array<Array<egret.ITextElement>> = [];
-        for (var i:number = 0; i < result.length; i++) {
-            textflowArr.push(parser.parser(result[i]));
-        }
-
-        var textfield = self.textfield;
-        var count = -1;
-        var change:Function = function () {
-            count++;
-            if (count >= textflowArr.length) {
-                count = 0;
-            }
-            var lineArr = textflowArr[count];
-            self.changeDescription(textfield, lineArr);
-            var tw = egret.Tween.get(textfield);
-            tw.to({"alpha": 1}, 200);
-            tw.wait(2000);
-            tw.to({"alpha": 0}, 200);
-            tw.call(change, self);
-        };
-        change();
-    }
-
-    /**
-     * 切换描述内容
-     * Switch to described content
-     */
-    private changeDescription(textfield:egret.TextField, textFlow:Array<egret.ITextElement>):void {
-        textfield.textFlow = textFlow;
-    }
-
-
-        private  touchNPC1(evt:egret.TouchEvent) {
-            console.log("click");
-        }
 }
 
 

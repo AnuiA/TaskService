@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////////
 //
-//  Copyright (c) 2014-present, Egret Technology.
+//  Copyright (c) 2014-2015, Egret Technology Inc.
 //  All rights reserved.
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -240,7 +240,7 @@ var RES;
 })(RES || (RES = {}));
 //////////////////////////////////////////////////////////////////////////////////////
 //
-//  Copyright (c) 2014-present, Egret Technology.
+//  Copyright (c) 2014-2015, Egret Technology Inc.
 //  All rights reserved.
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -477,7 +477,7 @@ var RES;
 })(RES || (RES = {}));
 //////////////////////////////////////////////////////////////////////////////////////
 //
-//  Copyright (c) 2014-present, Egret Technology.
+//  Copyright (c) 2014-2015, Egret Technology Inc.
 //  All rights reserved.
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -755,7 +755,7 @@ var RES;
 })(RES || (RES = {}));
 //////////////////////////////////////////////////////////////////////////////////////
 //
-//  Copyright (c) 2014-present, Egret Technology.
+//  Copyright (c) 2014-2015, Egret Technology Inc.
 //  All rights reserved.
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -985,7 +985,7 @@ var RES;
 })(RES || (RES = {}));
 //////////////////////////////////////////////////////////////////////////////////////
 //
-//  Copyright (c) 2014-present, Egret Technology.
+//  Copyright (c) 2014-2015, Egret Technology Inc.
 //  All rights reserved.
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -1090,7 +1090,7 @@ var RES;
 })(RES || (RES = {}));
 //////////////////////////////////////////////////////////////////////////////////////
 //
-//  Copyright (c) 2014-present, Egret Technology.
+//  Copyright (c) 2014-2015, Egret Technology Inc.
 //  All rights reserved.
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -1228,7 +1228,7 @@ var RES;
 })(RES || (RES = {}));
 //////////////////////////////////////////////////////////////////////////////////////
 //
-//  Copyright (c) 2014-present, Egret Technology.
+//  Copyright (c) 2014-2015, Egret Technology Inc.
 //  All rights reserved.
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -1372,7 +1372,7 @@ var RES;
 })(RES || (RES = {}));
 //////////////////////////////////////////////////////////////////////////////////////
 //
-//  Copyright (c) 2014-present, Egret Technology.
+//  Copyright (c) 2014-2015, Egret Technology Inc.
 //  All rights reserved.
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -1417,7 +1417,7 @@ var RES;
 })(RES || (RES = {}));
 //////////////////////////////////////////////////////////////////////////////////////
 //
-//  Copyright (c) 2014-present, Egret Technology.
+//  Copyright (c) 2014-2015, Egret Technology Inc.
 //  All rights reserved.
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -1478,7 +1478,7 @@ var RES;
 })(RES || (RES = {}));
 ////////////////////////////////////////////////////////////////////////////////////////
 ////
-////  Copyright (c) 2014-present, Egret Technology.
+////  Copyright (c) 2014-2015, Egret Technology Inc.
 ////  All rights reserved.
 ////  Redistribution and use in source and binary forms, with or without
 ////  modification, are permitted provided that the following conditions are met:
@@ -1662,9 +1662,6 @@ var RES;
                     }
                     delete this.textureMap[subkey];
                 }
-                if (sheet.dispose) {
-                    sheet.dispose();
-                }
                 return true;
             }
             return false;
@@ -1695,7 +1692,7 @@ var RES;
 })(RES || (RES = {}));
 //////////////////////////////////////////////////////////////////////////////////////
 //
-//  Copyright (c) 2014-present, Egret Technology.
+//  Copyright (c) 2014-2015, Egret Technology Inc.
 //  All rights reserved.
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -1794,7 +1791,7 @@ var RES;
 })(RES || (RES = {}));
 //////////////////////////////////////////////////////////////////////////////////////
 //
-//  Copyright (c) 2014-present, Egret Technology.
+//  Copyright (c) 2014-2015, Egret Technology Inc.
 //  All rights reserved.
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -1915,7 +1912,7 @@ var RES;
 })(RES || (RES = {}));
 //////////////////////////////////////////////////////////////////////////////////////
 //
-//  Copyright (c) 2014-present, Egret Technology.
+//  Copyright (c) 2014-2015, Egret Technology Inc.
 //  All rights reserved.
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -1976,7 +1973,7 @@ var RES;
 })(RES || (RES = {}));
 //////////////////////////////////////////////////////////////////////////////////////
 //
-//  Copyright (c) 2014-present, Egret Technology.
+//  Copyright (c) 2014-2015, Egret Technology Inc.
 //  All rights reserved.
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -2007,7 +2004,7 @@ var RES;
 })(RES || (RES = {}));
 //////////////////////////////////////////////////////////////////////////////////////
 //
-//  Copyright (c) 2014-present, Egret Technology.
+//  Copyright (c) 2014-2015, Egret Technology Inc.
 //  All rights reserved.
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -2123,7 +2120,7 @@ var RES;
 })(RES || (RES = {}));
 //////////////////////////////////////////////////////////////////////////////////////
 //
-//  Copyright (c) 2014-present, Egret Technology.
+//  Copyright (c) 2014-2015, Egret Technology Inc.
 //  All rights reserved.
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -2261,7 +2258,7 @@ var RES;
 })(RES || (RES = {}));
 //////////////////////////////////////////////////////////////////////////////////////
 //
-//  Copyright (c) 2014-present, Egret Technology.
+//  Copyright (c) 2014-2015, Egret Technology Inc.
 //  All rights reserved.
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -3006,7 +3003,7 @@ var RES;
         p.hasRes = function (key) {
             var type = this.resConfig.getType(key);
             if (type == "") {
-                var prefix = RES.AnalyzerBase.getStringTail(key);
+                var prefix = RES.AnalyzerBase.getStringPrefix(key);
                 type = this.resConfig.getType(prefix);
                 if (type == "") {
                     return false;
@@ -3288,7 +3285,7 @@ var RES;
 })(RES || (RES = {}));
 ////////////////////////////////////////////////////////////////////////////////////////
 ////
-////  Copyright (c) 2014-present, Egret Technology.
+////  Copyright (c) 2014-2015, Egret Technology Inc.
 ////  All rights reserved.
 ////  Redistribution and use in source and binary forms, with or without
 ////  modification, are permitted provided that the following conditions are met:
